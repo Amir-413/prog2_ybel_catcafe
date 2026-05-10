@@ -27,8 +27,11 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
-      - name: Build project
-        run: ./gradlew build
+      - name: Compile project
+        run: ./gradlew classes
+
+      - name: Run JUnit tests
+        run: ./gradlew test
 
       - name: Check formatting
         run: ./gradlew spotlessCheck
